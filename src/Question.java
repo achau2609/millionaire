@@ -1,6 +1,3 @@
-package project;
-
-
 public class Question {
 	private String questionText;
     private String[] choices;
