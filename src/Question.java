@@ -1,17 +1,14 @@
-package project;
-
-
 public class Question {
 	private String questionText;
     private String[] choices;
     private int correctIndex;
-    private String difficulty;
+    private String hint;
 	
-	Question(String question, String[] choices, int correctIndex, String diff){
+	Question(String question, String[] choices, int correctIndex, String diff, String hint){
 		this.questionText = question;
 		this.choices = choices;
 		this.correctIndex = correctIndex;
-		this.difficulty = diff;
+		this.hint = hint;
 	}
 	
 	public String getQuestionText() {
@@ -26,14 +23,10 @@ public class Question {
         return correctIndex;
     }
 
-    public String getCorrectAnswer() {
-        return choices[correctIndex];
+    public char getCorrectAnswer() {
+        return choices[correctIndex].charAt(0);
     }
 
-    public String getDifficulty() {
-        return difficulty;
-    }
-    
     public void eliminateChoices(int... indices) {
         // Eliminate choices at specified indices
         for (int index : indices) {
@@ -51,9 +44,10 @@ public class Question {
         }
     }
 
-    public void displayFriendResponse() {
-        // Display friend's response
-        System.out.println("You now have 1 minute to call your friend.");
+    public void displayHint() {
+        // Display audience response with the given distribution of votes
+        
+        System.out.println("Your Friend: " + hint);
     }
     
     public void printQuestion() {
