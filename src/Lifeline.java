@@ -32,7 +32,7 @@ public class Lifeline {
 
     public void applyLifeline(Question question) {
         if (type.equals(LifelineType.FIFTY_FIFTY)) {
-            apply50_50Lifeline(question);
+        	apply50_50Lifeline(question);
         } else if (type.equals(LifelineType.ASK_AUDIENCE)) {
             applyAskTheAudienceLifeline(question);
         } else if (type.equals(LifelineType.PHONE)) {
@@ -56,7 +56,6 @@ public class Lifeline {
         } while (eliminated2 == correctIndex || eliminated2 == eliminated1);
 
         question.eliminateChoices(eliminated1, eliminated2);
-        markUsed();
     }
 
     private void applyAskTheAudienceLifeline(Question question) {
@@ -69,12 +68,10 @@ public class Lifeline {
         }
 
         question.displayAudienceResponse(votes);
-        markUsed();
     }
 
     private void applyPhoneAFriendLifeline(Question question) {
         // Simulate friend's response with a correct answer suggestion
-        question.displayFriendResponse();
-        markUsed();
+    	question.displayHint();
     }
 }
