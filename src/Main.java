@@ -2,22 +2,21 @@ import java.util.Scanner;
 
 public class Main {
 
-    // indicating what round;
-    int roundNo = 1;
-    // arrays for round earned money
-    int[] rOneEasy = {100, 500, 1000};
-    int[] rTwoEasy = {8000, 16000, 32000};
-    int[] rThreeEasy = {125000, 500000, 1000000};
-    int[] rOneHard = {100, 200, 300, 500, 1000};
-    int[] rTwoHard = {2000, 4000, 8000, 16000, 32000};
-    int[] rThreeHard = {64000, 125000, 250000, 500000, 1000000};
-
     public Main() {
 
     }
 
-    public void roundStart() {
-
+    // prints game rules
+    public void printRules() {
+        System.out.println("\nGeneral rules are as follows:");
+        System.out.println("There will be 3 rounds, and each round has 3 questions for Easy difficulty, and 5 for Hard.");
+        System.out.println("At the end of the rounds, you can win $1,000, $32,000, $1,000,000 respectively.");
+        System.out.println("You may choose to leave after any round and take the corresponding amount of winnings with you; leaving mid round is not allowed.");
+        System.out.println("You will get three lifelines:");
+        System.out.println("- 50/50, which eliminates 2 incorrect answers;");
+        System.out.println("- Ask the audience, in which you’ll be given multiple audience responses and you will have to decide which one is the correct answer;");
+        System.out.println("- Phone a friend, in which you will be given one hint related to the correct answer.");
+        System.out.println("You will lose all your winning if there is a single incorrect answer and the game will end.\n");
     }
 
     // obtain difficulty
@@ -37,24 +36,12 @@ public class Main {
 
     }
 
-    // prints game rules
-    public void printRules() {
-        System.out.println("\nGeneral rules are as follows:");
-        System.out.println("There will be 3 rounds, and each round has 3 questions for Easy difficulty, and 5 for Hard.");
-        System.out.println("At the end of the rounds, you can win $1,000, $32,000, $1,000,000 respectively.");
-        System.out.println("You may choose to leave after any round and take the corresponding amount of winnings with you; leaving mid round is not allowed.");
-        System.out.println("You will get three lifelines:");
-        System.out.println("- 50/50, which eliminates 2 incorrect answers;");
-        System.out.println("- Ask the audience, in which you’ll be given multiple audience responses and you will have to decide which one is the correct answer;");
-        System.out.println("- Phone a friend, in which you will be given one hint related to the correct answer.");
-        System.out.println("You will lose all your winning if there is a single incorrect answer and the game will end.\n");
-
-    }
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
+
+        // new main class object
         Main main = new Main();
 
+        int roundNo;
         String menuInput;
         Scanner userInput = new Scanner(System.in);
 
@@ -75,21 +62,23 @@ public class Main {
                 main.printRules();
             } else if (menuInput.equals("S")) {     // start the game here
 
+                // game start prompt
                 System.out.println("Game will start now!");
 
-                String diff = main.difficulty(userInput); //obtain userInput for difficulty
-                int rounds;
-                if (diff.equals("E")) {
-                    rounds = 3;
-                } else {
-                    rounds = 5;
-                }
+                // enter name
+                System.out.println("Please enter your name:");
+                String username = userInput.nextLine();
 
-                // round 1
+                // enter difficulty
+                System.out.println("Please enter E if you wish to play on Easy mode, or H for Hard mode.");
+                String diff = main.difficulty(userInput);
 
-                // round 2
+                // Initialize player, game, lifeline objects
+                //Player player = new Player();
+                Game game = new Game(diff);
 
-                // round 3
+                game.gameStart(diff, userInput);
+
 
             } else { // error handling for incorrect user input
                 System.out.println("That is not a valid option. Please try again.");
