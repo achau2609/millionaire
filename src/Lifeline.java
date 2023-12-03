@@ -64,7 +64,9 @@ public class Lifeline {
         int[] votes = new int[question.getChoices().length];
         
         for (int i = 0; i < votes.length; i++) {
-            votes[i] = random.nextInt(41) + 60; // Simulate 60-100% audience correctness
+        	int minimumVotes = i == question.getCorrectIndex()? 50 : 0;
+        	// correct answer has at least 50 votes;
+            votes[i] = random.nextInt(41) + minimumVotes;
         }
 
         question.displayAudienceResponse(votes);

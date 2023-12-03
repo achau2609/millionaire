@@ -9,7 +9,7 @@ public class QuestionReader {
 	QuestionReader() throws FileNotFoundException{
 		
 		try {
-			File file = new File("src/week5/scores.txt");
+			File file = new File("questions.text");
 			
 			Scanner input = new Scanner(file);
 			
@@ -33,8 +33,6 @@ public class QuestionReader {
 			input.close();
 		} catch (Exception e) {
 			throw e;
-		} finally {
-			
 		}
 		
 	}
