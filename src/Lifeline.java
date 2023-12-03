@@ -64,8 +64,8 @@ public class Lifeline {
         int[] votes = new int[question.getChoices().length];
         
         for (int i = 0; i < votes.length; i++) {
-        	int minimumVotes = i == question.getCorrectIndex()? 50 : 0;
-        	// correct answer has at least 50 votes;
+        	int minimumVotes = i == question.getCorrectIndex()? 60 : 0;
+        	// correct answer has at least 60 votes;
             votes[i] = random.nextInt(41) + minimumVotes;
         }
 
