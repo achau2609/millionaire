@@ -25,12 +25,16 @@ public class QuestionReader {
                 answers[3] = input.nextLine();
                 String answer = input.nextLine();
                 // Get correct answer ABCD
-                char correctAnswer = answer.substring(8, 1).charAt(0);
+                System.out.println(answer);
+                char correctAnswer = answer.substring(8, 9).charAt(0);
                 int correctIndex = (int) correctAnswer - (int)'A';
                 questions.add(new Question(questionText, answers, correctIndex, hint));
                 
-                input.nextLine();
-                input.nextLine();
+                if(input.hasNext()) {
+                	input.nextLine();
+                    input.nextLine();
+                }
+                	
             }
 			
 			input.close();
