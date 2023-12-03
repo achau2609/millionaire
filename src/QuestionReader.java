@@ -25,7 +25,7 @@ public class QuestionReader {
                 answers[3] = input.nextLine();
                 String answer = input.nextLine();
                 // Get correct answer ABCD
-                System.out.println(answer);
+         //       System.out.println(answer);
                 char correctAnswer = answer.substring(8, 9).charAt(0);
                 int correctIndex = (int) correctAnswer - (int)'A';
                 questions.add(new Question(questionText, answers, correctIndex, hint));
