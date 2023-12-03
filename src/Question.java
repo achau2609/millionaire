@@ -40,7 +40,7 @@ public class Question {
         
         System.out.println("Audience Response:");
         for (int i = 0; i < choices.length; i++) {
-            System.out.println(choices[i] + ": " + votes[i] + "%");
+            System.out.println(choices[i] + ": " + votes[i]);
         }
     }
 
