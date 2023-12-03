@@ -53,7 +53,7 @@ public class Question {
     public void printQuestion() {
     	System.out.println("Q: " + getQuestionText());
     	for (int i = 0; i < choices.length; i++) {
-    		System.out.println(choices);
+    		System.out.println(choices[i]);
     	}
     }
 }
