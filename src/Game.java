@@ -11,44 +11,44 @@ public class Game {
     private final int[] rOneHard = {100, 200, 300, 500, 1000};
     private final int[] rTwoHard = {2000, 4000, 8000, 16000, 32000};
     private final int[] rThreeHard = {64000, 125000, 250000, 500000, 1000000};
-    private int rounds;
+    private final int rounds;
     private final HashSet<String> answerOptions = new HashSet<>();
-    Map<String, int[]> winningList = new HashMap<>();
+    private Map<String, int[]> winningList = new HashMap<>();
 
 
     public Game(String diff) {
+        initializeWinningList();
+        initializeAnswerOptions();
+        this.rounds = (diff.equals("E")) ? 3 : 5;
+    }
 
-        this.winningList.put("1E", rOneEasy);
-        this.winningList.put("2E", rTwoEasy);
-        this.winningList.put("3E", rThreeEasy);
-        this.winningList.put("1H", rOneHard);
-        this.winningList.put("2H", rTwoHard);
-        this.winningList.put("3H", rThreeHard);
+    // initialize winningList
+    private void initializeWinningList() {
+        winningList.put("1E", rOneEasy);
+        winningList.put("2E", rTwoEasy);
+        winningList.put("3E", rThreeEasy);
+        winningList.put("1H", rOneHard);
+        winningList.put("2H", rTwoHard);
+        winningList.put("3H", rThreeHard);
+    }
 
-        this.answerOptions.add("A");
-        this.answerOptions.add("B");
-        this.answerOptions.add("C");
-        this.answerOptions.add("D");
-        this.answerOptions.add("Lifeline");
-
-        if (diff.equals("E")) {
-            this.rounds = 3;
-        } else {
-            this.rounds = 5;
-        }
-
+    // initialize answerOptions
+    private void initializeAnswerOptions() {
+        answerOptions.add("A");
+        answerOptions.add("B");
+        answerOptions.add("C");
+        answerOptions.add("D");
+        answerOptions.add("Lifeline");
     }
 
     // list for winning output
-    public int[] winningList(int roundNo, String diff) {
-
+    private int[] winningList(int roundNo, String diff) {
         String concatRound = String.valueOf(roundNo).concat(diff);
         return winningList.get(concatRound);
-
     }
 
     // returns corresponding index from input
-    public int pairCorrectIndex(String qInput) {
+    private int pairCorrectIndex(String qInput) {
         return switch (qInput) {
             case "B" -> 1;
             case "C" -> 2;
@@ -58,7 +58,7 @@ public class Game {
     }
 
     // start the round
-    public boolean roundStart(int roundNo, String diff, Scanner userInput, Player player, Question[] questions) {
+    private boolean roundStart(int roundNo, String diff, Scanner userInput, Player player, Question[] questions) {
 
         // int array for how many user has won after each question
         int[] winnings = winningList(roundNo, diff);
@@ -91,9 +91,24 @@ public class Game {
                 qInput = userInput.nextLine();
 
                 // check for appropriate input
-                if (!answerOptions.contains(qInput)) {
+                if (!answerOptions.contains(qInput)) {  // invalid input (not answer/lifeline)
                     System.out.println("Invalid option, try again.");
-                } else { // ADD LIFELINE CONDITIONAL LATER
+                } else if (qInput.equals("Lifeline")) { // use lifeline
+                    // check if user can use lifeline; both Hard difficulty round 1 and used this round conditionals
+                    if (!haveLifeline || usedLifeline) {
+                        System.out.println("Lifelines are not available this round, or you have used one already.");
+                    } else { // user can pick lifeline
+                        System.out.println("Pick a lifeline from the list below!");
+                        System.out.println("abcd");
+                        // check whether lifeline can be used
+
+                        // if can use, display outcome (50/50 list answers, audience list probability, phone list the hint)
+
+                        // set flag to true so user can't use lifelines twice on the same question.
+                        usedLifeline = true;
+                    }
+
+                } else { // when user entered answer
                     // ask for answer confirmation
                     System.out.println("Are you sure about your answer? Enter Y to confirm or N to reselect an answer.");
                     userConfirm = userInput.nextLine();
