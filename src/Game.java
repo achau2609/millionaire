@@ -73,7 +73,6 @@ public class Game {
             currentQuestion = question.getQuestionText();
             currentQuestionChoices = question.getChoices();
             correctIndex = question.getCorrectIndex();
-            correctAnswer = question.getCorrectAnswer();
 
             // display question and the option for lifelines if available
             System.out.println(currentQuestion);
@@ -129,7 +128,7 @@ public class Game {
             // determines if the answer is correct or not; if not, break loop
             // otherwise, display current winnings, end of loop
             if (Integer.parseInt(qInput) != correctIndex) {
-                System.out.println("This is the wrong answer. The correct answer is: " + correctAnswer);
+                System.out.println("This is the wrong answer.");
                 break;
             } else {
                 System.out.println("You have answered correctly! Your current winnings is " + winnings[currentRound]);

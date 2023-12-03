@@ -62,6 +62,11 @@ public class Main {
                 main.printRules();
             } else if (menuInput.equals("S")) {     // start the game here
 
+                Lifeline.LifelineType fifty = Lifeline.LifelineType.FIFTY_FIFTY;
+                Lifeline.LifelineType audience = Lifeline.LifelineType.ASK_AUDIENCE;
+                Lifeline.LifelineType phone = Lifeline.LifelineType.PHONE;
+
+                Lifeline.LifelineType[] lifelines = new Lifeline.LifelineType[]{fifty, audience, phone};
                 // game start prompt
                 System.out.println("Game will start now!");
 
@@ -74,7 +79,7 @@ public class Main {
                 String diff = main.difficulty(userInput);
 
                 // Initialize player, game, lifeline objects
-                //Player player = new Player();
+                Player player = new Player(username,);
                 Game game = new Game(diff);
 
                 game.gameStart(diff, userInput);
