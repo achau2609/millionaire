@@ -28,6 +28,9 @@ public class QuestionReader {
                 char correctAnswer = answer.substring(8, 1).charAt(0);
                 int correctIndex = (int) correctAnswer - (int)'A';
                 questions.add(new Question(questionText, answers, correctIndex, hint));
+                
+                input.nextLine();
+                input.nextLine();
             }
 			
 			input.close();
