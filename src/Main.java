@@ -73,7 +73,8 @@ public class Main {
                 // enter name
                 System.out.println("Please enter your name:");
                 String username = userInput.nextLine();
-
+                
+                
                 // enter difficulty
                 System.out.println("Please enter E if you wish to play on Easy mode, or H for Hard mode.");
                 String diff = main.difficulty(userInput);
