@@ -49,7 +49,7 @@ public class Game {
     }
 
     // start the round
-    public boolean roundStart(int roundNo, String diff, Scanner userInput) {
+    public boolean roundStart(int roundNo, String diff, Scanner userInput, Player player, Question[] questions) {
 
         // int array for how many user has won after each question
         int[] winnings = winningList(roundNo, diff);
@@ -69,16 +69,22 @@ public class Game {
             // String variable to obtain userInput
             haveLifeline = false;
 
+            correctIndex = question.getCorrectIndex();
+            /*
             // obtain question + answers + correct answer
             currentQuestion = question.getQuestionText();
             currentQuestionChoices = question.getChoices();
-            correctIndex = question.getCorrectIndex();
+
 
             // display question and the option for lifelines if available
             System.out.println(currentQuestion);
             for (String currentQuestionChoice : currentQuestionChoices) {
                 System.out.println(currentQuestionChoice);
-            }
+            }*/
+
+            // print question
+            questions[currentRound].printQuestion();
+
             if (diff.equals("H") && roundNo == 1) {
                 System.out.println("Lifelines are not available this round.");
             } else {
@@ -145,13 +151,16 @@ public class Game {
 
     }
 
-    public void gameStart(String diff, Scanner userInput) {
+    public void gameStart(String diff, Scanner userInput, Player player, QuestionReader qReader) {
 
         int roundNo = 1;
         int[] roundWinnings = new int[] {1000,32000,1000000};
 
         // round 1
-        boolean result_1 = roundStart(roundNo,diff,userInput);
+        // generate questions
+        Question[] roundOneQuestions = qReader.getQuestions(rounds);
+        // start round
+        boolean result_1 = roundStart(roundNo,diff,userInput, player, roundOneQuestions);
         if(!result_1) {
             System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
             return;
@@ -160,7 +169,10 @@ public class Game {
         }
 
         // round 2
-        boolean result_2 = roundStart(roundNo,diff,userInput);
+        // generate questions
+        Question[] roundTwoQuestions = qReader.getQuestions(rounds);
+        // start round
+        boolean result_2 = roundStart(roundNo,diff,userInput, player, roundTwoQuestions);
         if(!result_2) {
             System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
             return;
@@ -169,7 +181,10 @@ public class Game {
         }
 
         // round 3
-        boolean result_3 = roundStart(roundNo,diff,userInput);
+        // generate questions
+        Question[] roundThreeQuestions = qReader.getQuestions(rounds);
+        // start round
+        boolean result_3 = roundStart(roundNo,diff,userInput, player, roundThreeQuestions);
         if(!result_3) {
             System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
             return;
