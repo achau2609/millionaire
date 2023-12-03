@@ -87,9 +87,9 @@ public class Main {
                 // start game
                 game.gameStart(diff, userInput, player, qReader);
 
-                /*
+
                 //  debug
-                Question[] q1 = qReader.getQuestions(1);
+                /*Question[] q1 = qReader.getQuestions(1);
                 q1[0].printQuestion();
                 System.out.println(q1[0].getCorrectIndex());
                 System.out.println(q1[0].getCorrectAnswer());*/

@@ -26,10 +26,10 @@ public class Game {
         this.winningList.put("2H", rTwoHard);
         this.winningList.put("3H", rThreeHard);
 
-        this.answerOptions.add("1");
-        this.answerOptions.add("2");
-        this.answerOptions.add("3");
-        this.answerOptions.add("4");
+        this.answerOptions.add("A");
+        this.answerOptions.add("B");
+        this.answerOptions.add("C");
+        this.answerOptions.add("D");
         this.answerOptions.add("Lifeline");
 
         if (diff.equals("E")) {
@@ -48,6 +48,23 @@ public class Game {
 
     }
 
+    // returns corresponding index from input
+    public int pairCorrectIndex(String qInput) {
+        int indexNo = 0;
+        switch (qInput) {
+            case "B":
+                indexNo = 1;
+                break;
+            case "C":
+                indexNo = 2;
+                break;
+            case "D":
+                indexNo = 3;
+                break;
+        }
+        return indexNo;
+    }
+
     // start the round
     public boolean roundStart(int roundNo, String diff, Scanner userInput, Player player, Question[] questions) {
 
@@ -55,9 +72,12 @@ public class Game {
         int[] winnings = winningList(roundNo, diff);
 
         // all variables
+        boolean haveLifeline = true;
+        boolean usedLifeline;
+
         String qInput;  // user input
+        int qInputIndex;
         String userConfirm;
-        boolean haveLifeline;
         String currentQuestion;
         String[] currentQuestionChoices;
         int correctIndex;
@@ -67,33 +87,48 @@ public class Game {
         for(int currentRound = 0; currentRound < rounds; currentRound++) {
 
             // String variable to obtain userInput
-            haveLifeline = false;
+            usedLifeline = false;
 
-            correctIndex = question.getCorrectIndex();
-            /*
-            // obtain question + answers + correct answer
-            currentQuestion = question.getQuestionText();
-            currentQuestionChoices = question.getChoices();
-
-
-            // display question and the option for lifelines if available
-            System.out.println(currentQuestion);
-            for (String currentQuestionChoice : currentQuestionChoices) {
-                System.out.println(currentQuestionChoice);
-            }*/
+            // if user is playing on hard, no lifeline in round 1
+            if (diff.equals("H") && roundNo == 1) {
+                haveLifeline = false;
+            }
 
             // print question
             questions[currentRound].printQuestion();
 
-            if (diff.equals("H") && roundNo == 1) {
-                System.out.println("Lifelines are not available this round.");
-            } else {
-                haveLifeline = true;
-                System.out.println("You may also opt to use a lifeline! Type \'Lifelife\' for the list of available lifelines.");
+            while(true) {
+                // prompt answer
+                System.out.println("Please pick the correct answer using the corresponding letter, or use a lifeline if it's available.");
+                qInput = userInput.nextLine();
+
+                // check for appropriate input
+                if (!answerOptions.contains(qInput)) {
+                    System.out.println("Invalid option, try again.");
+                } else { // ADD LIFELINE CONDITIONAL LATER
+                    // ask for answer confirmation
+                    System.out.println("Are you sure about your answer? Enter Y to confirm or N to reselect an answer.");
+                    userConfirm = userInput.nextLine();
+                    // return when Y (yes)
+                    if (userConfirm.equals("Y")) {
+                        break;
+                    } else if (userConfirm.equals("N")) {
+                        System.out.println("No worries, try again.");
+                    } else {
+                        System.out.println("Invalid option.");
+                    }
+                }
             }
 
+            qInputIndex = pairCorrectIndex(qInput);
+
+            //System.out.println("Lifelines are not available this round.");
+            //System.out.println("You may also opt to use a lifeline! Type \'Lifelife\' for the list of available lifelines.");
+
+
+
             // requests userInput for answer; user also has option to use lifeline; checks for correct input
-            while(true) {
+            /*while(true) {
                 System.out.println("Please pick the correct answer using the corresponding number, or use a lifeline if it's available.");
                 qInput = userInput.nextLine();
                 if (!answerOptions.contains(qInput)) {
@@ -103,7 +138,7 @@ public class Game {
                 } else {
                     break;
                 }
-            }
+            }*/
 
             // check if there's any remaining lifelines; if yes show options
 
@@ -111,7 +146,7 @@ public class Game {
                 // if 50-50, remove wrong answer index from array
 
             // checks for incorrect input + if user tries to use lifeline again
-            while(true) {
+            /*while(true) {
                 System.out.println("Please pick the correct answer using the corresponding number.");
                 qInput = userInput.nextLine();
                 if (!answerOptions.contains(qInput)) {
@@ -129,11 +164,11 @@ public class Game {
                         System.out.println("Invalid option.");
                     }
                 }
-            }
+            }*/
 
             // determines if the answer is correct or not; if not, break loop
             // otherwise, display current winnings, end of loop
-            if (Integer.parseInt(qInput) != correctIndex) {
+            if (qInputIndex != questions[currentRound].getCorrectIndex()) {
                 System.out.println("This is the wrong answer.");
                 break;
             } else {
