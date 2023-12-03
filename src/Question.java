@@ -4,7 +4,7 @@ public class Question {
     private int correctIndex;
     private String hint;
 	
-	Question(String question, String[] choices, int correctIndex, String diff, String hint){
+	Question(String question, String[] choices, int correctIndex, String hint){
 		this.questionText = question;
 		this.choices = choices;
 		this.correctIndex = correctIndex;
@@ -23,10 +23,10 @@ public class Question {
         return correctIndex;
     }
 
-    public char getCorrectAnswer() {
-        return choices[correctIndex].charAt(0);
+    public String getCorrectAnswer() {
+        return choices[correctIndex];
     }
-
+    
     public void eliminateChoices(int... indices) {
         // Eliminate choices at specified indices
         for (int index : indices) {
