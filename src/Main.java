@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
@@ -36,7 +37,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         // new main class object
         Main main = new Main();
@@ -78,11 +79,14 @@ public class Main {
                 System.out.println("Please enter E if you wish to play on Easy mode, or H for Hard mode.");
                 String diff = main.difficulty(userInput);
 
-                // Initialize player, game, lifeline objects
+                // Initialize player, game, question list
                 Player player = new Player(username, lifelines);
                 Game game = new Game(diff);
+                QuestionReader qReader = new QuestionReader();
 
-                game.gameStart(diff, userInput);
+                //game.gameStart(diff, userInput);
+
+                System.out.println(qReader.questions);
 
 
             } else { // error handling for incorrect user input
