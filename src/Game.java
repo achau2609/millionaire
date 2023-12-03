@@ -12,9 +12,8 @@ public class Game {
     private final int[] rTwoHard = {2000, 4000, 8000, 16000, 32000};
     private final int[] rThreeHard = {64000, 125000, 250000, 500000, 1000000};
     private int rounds;
-    private Question question;
-    private HashSet<String> answerOptions = new HashSet<String>();
-    Map<String, int[]> winningList = new HashMap<String, int[]>();
+    private final HashSet<String> answerOptions = new HashSet<>();
+    Map<String, int[]> winningList = new HashMap<>();
 
 
     public Game(String diff) {
