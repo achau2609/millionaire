@@ -6,7 +6,7 @@ public class Question {
 	
 	Question(String question, String[] choices, int correctIndex, String hint){
 		this.questionText = question;
-		this.choices = choices;
+		this.choices = choices.clone();
 		this.correctIndex = correctIndex;
 		this.hint = hint;
 	}
