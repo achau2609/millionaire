@@ -87,6 +87,7 @@ public class Main {
                 // start game
                 game.gameStart(diff, userInput, player, qReader);
 
+                System.out.println("You will now be returned to the main menu.\n");
 
                 //  debug
                 /*Question[] q1 = qReader.getQuestions(1);

@@ -172,7 +172,7 @@ public class Game {
                 System.out.println("This is the wrong answer.");
                 break;
             } else {
-                System.out.println("You have answered correctly! Your current winnings is " + winnings[currentRound]);
+                System.out.println("You have answered all questions in this round correctly! Your current winnings is $" + winnings[currentRound] + ".");
             }
 
             // return true if player has finished all rounds with correct answers
@@ -189,7 +189,7 @@ public class Game {
     public void gameStart(String diff, Scanner userInput, Player player, QuestionReader qReader) {
 
         int roundNo = 1;
-        int[] roundWinnings = new int[] {1000,32000,1000000};
+        String cont;
 
         // round 1
         // generate questions
@@ -197,10 +197,20 @@ public class Game {
         // start round
         boolean result_1 = roundStart(roundNo,diff,userInput, player, roundOneQuestions);
         if(!result_1) {
-            System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
+            System.out.println("\nYou have lost the game, and your winnings are $0. Thank you for playing!");
             return;
         } else {
-            roundNo++;
+            System.out.println("\nCongratulations on finishing round 1!");
+            System.out.println("Your have earned $1000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println("Enter Yes to keep playing, or No to finish the game.");
+            cont = userInput.nextLine();
+            if (cont.equals("No")) {
+                System.out.println("Thank you for playing! You have won $1,000.");
+                return;
+            } else {
+                roundNo++;
+                System.out.println("We will now move onto round 2.\n");
+            }
         }
 
         // round 2
@@ -209,10 +219,20 @@ public class Game {
         // start round
         boolean result_2 = roundStart(roundNo,diff,userInput, player, roundTwoQuestions);
         if(!result_2) {
-            System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
+            System.out.println("\nYou have lost the game, and your winnings are $0. Thank you for playing!");
             return;
         } else {
-            roundNo++;
+            System.out.println("\nCongratulations on finishing round 2!");
+            System.out.println("Your have earned $32000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println("Enter Yes to keep playing, or No to finish the game.");
+            cont = userInput.nextLine();
+            if (cont.equals("No")) {
+                System.out.println("Thank you for playing! You have won $32,000.");
+                return;
+            } else {
+                roundNo++;
+                System.out.println("We will now move onto round 3.\n");
+            }
         }
 
         // round 3
@@ -222,12 +242,10 @@ public class Game {
         boolean result_3 = roundStart(roundNo,diff,userInput, player, roundThreeQuestions);
         if(!result_3) {
             System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
-            return;
         } else {
-            System.out.println();
+            System.out.println("\nCongratulations on finishing round 3, and the entire game!");
+            System.out.println("You have won the grand prize of $1,000,000! Thank you for playing!");
         }
-
     }
-
 
 }
