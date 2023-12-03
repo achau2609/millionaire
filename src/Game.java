@@ -50,19 +50,12 @@ public class Game {
 
     // returns corresponding index from input
     public int pairCorrectIndex(String qInput) {
-        int indexNo = 0;
-        switch (qInput) {
-            case "B":
-                indexNo = 1;
-                break;
-            case "C":
-                indexNo = 2;
-                break;
-            case "D":
-                indexNo = 3;
-                break;
-        }
-        return indexNo;
+        return switch (qInput) {
+            case "B" -> 1;
+            case "C" -> 2;
+            case "D" -> 3;
+            default -> 0;
+        };
     }
 
     // start the round
@@ -78,10 +71,6 @@ public class Game {
         String qInput;  // user input
         int qInputIndex;
         String userConfirm;
-        String currentQuestion;
-        String[] currentQuestionChoices;
-        int correctIndex;
-        String correctAnswer;
 
         // loop through set amount of questions; depending on difficulty.
         for(int currentRound = 0; currentRound < rounds; currentRound++) {
@@ -120,6 +109,7 @@ public class Game {
                 }
             }
 
+            // pair the alphabetical index to array index
             qInputIndex = pairCorrectIndex(qInput);
 
             //System.out.println("Lifelines are not available this round.");
@@ -172,7 +162,7 @@ public class Game {
                 System.out.println("This is the wrong answer.");
                 break;
             } else {
-                System.out.println("You have answered all questions in this round correctly! Your current winnings is $" + winnings[currentRound] + ".");
+                System.out.println("You have answered the question correctly! Your current winnings is $" + winnings[currentRound] + ".");
             }
 
             // return true if player has finished all rounds with correct answers

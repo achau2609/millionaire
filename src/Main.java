@@ -42,7 +42,6 @@ public class Main {
         // new main class object
         Main main = new Main();
 
-        int roundNo;
         String menuInput;
         Scanner userInput = new Scanner(System.in);
 
@@ -86,15 +85,8 @@ public class Main {
 
                 // start game
                 game.gameStart(diff, userInput, player, qReader);
-
+                // return to main menu after a win or loss
                 System.out.println("You will now be returned to the main menu.\n");
-
-                //  debug
-                /*Question[] q1 = qReader.getQuestions(1);
-                q1[0].printQuestion();
-                System.out.println(q1[0].getCorrectIndex());
-                System.out.println(q1[0].getCorrectAnswer());*/
-
 
             } else { // error handling for incorrect user input
                 System.out.println("That is not a valid option. Please try again.");
