@@ -83,10 +83,12 @@ public class Main {
                 Player player = new Player(username, lifelines);
                 Game game = new Game(diff);
                 QuestionReader qReader = new QuestionReader();
+                //Question question = new Question(qReader.questions.get(0));
 
                 //game.gameStart(diff, userInput);
+                Question[] q1 = qReader.getQuestions(1);
 
-                System.out.println(qReader.questions);
+                q1[0].printQuestion();
 
 
             } else { // error handling for incorrect user input
