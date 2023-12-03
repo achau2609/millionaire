@@ -1,16 +1,12 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
     private String playerName;
-    private char choice;
     private Lifeline[] lifelines;
-    private Scanner scanner; // Scanner for user input
 
     public Player(String playerName, Lifeline[] lifelines) {
         this.playerName = playerName;
         this.lifelines = lifelines;
-        this.scanner = new Scanner(System.in);
     }
 
     public Lifeline[] getLifelines() {
