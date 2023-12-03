@@ -62,25 +62,24 @@ public class Main {
                 main.printRules();
             } else if (menuInput.equals("S")) {     // start the game here
 
-                Lifeline.LifelineType fifty = Lifeline.LifelineType.FIFTY_FIFTY;
-                Lifeline.LifelineType audience = Lifeline.LifelineType.ASK_AUDIENCE;
-                Lifeline.LifelineType phone = Lifeline.LifelineType.PHONE;
+                Lifeline fifty = new Lifeline(Lifeline.LifelineType.FIFTY_FIFTY);
+                Lifeline audience = new Lifeline(Lifeline.LifelineType.ASK_AUDIENCE);
+                Lifeline phone = new Lifeline(Lifeline.LifelineType.PHONE);
 
-                Lifeline.LifelineType[] lifelines = new Lifeline.LifelineType[]{fifty, audience, phone};
+                Lifeline[] lifelines = new Lifeline[]{fifty, audience, phone};
                 // game start prompt
                 System.out.println("Game will start now!");
 
                 // enter name
                 System.out.println("Please enter your name:");
                 String username = userInput.nextLine();
-                
-                
+
                 // enter difficulty
                 System.out.println("Please enter E if you wish to play on Easy mode, or H for Hard mode.");
                 String diff = main.difficulty(userInput);
 
                 // Initialize player, game, lifeline objects
-                Player player = new Player(username,);
+                Player player = new Player(username, lifelines);
                 Game game = new Game(diff);
 
                 game.gameStart(diff, userInput);
