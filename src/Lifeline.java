@@ -68,6 +68,27 @@ public class Lifeline {
         	// correct answer has at least 60 votes;
             votes[i] = random.nextInt(41) + minimumVotes;
         }
+        
+        /*
+            Random random = new Random();
+            int[] votes = new int[question.getChoices().length];
+            
+            votes[correctIndex] = random.nextInt(40) + 50;  
+            int count=0;
+          	int sum=100-votes[correctIndex];
+          	for (int i = 0; i < votes.length; i++) {
+          	    if (i == correctIndex) {
+          	        continue;
+          	    }
+
+          	    votes[i] = (count < 2) ? random.nextInt(sum) : sum;
+          	    sum -= votes[i];
+
+          	    if (count < 2) {
+          	        count++;
+          	    }
+          	} 
+        */
 
         question.displayAudienceResponse(votes);
     }
