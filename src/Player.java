@@ -13,10 +13,11 @@ public class Player {
         return lifelines.clone();
     }
 
-    public boolean useLifeline(String type) {
+    public boolean useLifeline(String type, Question currentQuestion) {
         for (Lifeline lifeline : lifelines) {
             if (lifeline.getType().equals(type) && !lifeline.isUsed()) {
                 lifeline.markUsed();
+                lifeline.applyLifeline(currentQuestion);
                 return true; 
             }
         }
