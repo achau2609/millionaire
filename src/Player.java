@@ -13,15 +13,14 @@ public class Player {
         return lifelines.clone();
     }
 
-    public void useLifeline(String type) {
+    public boolean useLifeline(String type) {
         for (Lifeline lifeline : lifelines) {
             if (lifeline.getType().equals(type) && !lifeline.isUsed()) {
                 lifeline.markUsed();
-                System.out.println(playerName + " has used the " + type + " lifeline.");
-                return;
+                return true; 
             }
         }
-        System.out.println("Invalid lifeline type or lifeline already used.");
+        return false; 
     }
 
 }
