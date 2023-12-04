@@ -60,18 +60,20 @@ public class Lifeline {
 
     private void applyAskTheAudienceLifeline(Question question) {
         // Simulate audience response with a random distribution
-        Random random = new Random();
+        /*Random random = new Random();
         int[] votes = new int[question.getChoices().length];
         
         for (int i = 0; i < votes.length; i++) {
         	int minimumVotes = i == question.getCorrectIndex()? 60 : 0;
         	// correct answer has at least 60 votes;
             votes[i] = random.nextInt(41) + minimumVotes;
-        }
+        }*/
         
-        /*
-            Random random = new Random();
-            int[] votes = new int[question.getChoices().length];
+
+        Random random = new Random();
+        int[] votes = new int[question.getChoices().length];
+
+            int correctIndex = question.getCorrectIndex();
             
             votes[correctIndex] = random.nextInt(40) + 50;  
             int count=0;
@@ -88,7 +90,7 @@ public class Lifeline {
           	        count++;
           	    }
           	} 
-        */
+
 
         question.displayAudienceResponse(votes);
     }

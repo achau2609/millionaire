@@ -64,8 +64,8 @@ public class Game {
 
     private String pairCorrectLifeline(String qInput) {
         return switch (qInput) {
-            case "Ask audience" -> "Ask the Audience";
-            case "Phone friend" -> "Phone a Friend";
+            case "Audience" -> "Ask the Audience";
+            case "Phone" -> "Phone a Friend";
             default -> "50/50";
         };
     }
