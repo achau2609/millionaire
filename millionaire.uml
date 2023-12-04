@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_cDqQwJLgEe6uQoJcvkG_wg" name="millionaire">
+    <eAnnotations xmi:id="_dvQ28JLgEe6uQoJcvkG_wg" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_dvQ28ZLgEe6uQoJcvkG_wg" source="codegen">
+        <details xmi:id="_dvReAJLgEe6uQoJcvkG_wg" key="codegenDirectory" value="/millionaire/src"/>
+        <details xmi:id="_fJuCwJLgEe6uQoJcvkG_wg" key="AssociatedSourceCode" value="/millionaire/src/Game.java;347903759/1;/millionaire/src/Lifeline.java;657227016/1;/millionaire/src/Main.java;1690664771/1;/millionaire/src/Player.java;2462843258/1;/millionaire/src/Question.java;3825835918/1;/millionaire/src/QuestionReader.java;410203999/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_eBLGUJLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_eBLtYJLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_eBLtYZLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_eBLtYpLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_eBLtY5LgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_eBMUcJLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_eBMUcZLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_eBMUcpLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_eBOwsJLgEe6uQoJcvkG_wg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_d_x_MJLgEe6uQoJcvkG_wg" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_d_ymQJLgEe6uQoJcvkG_wg" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_eEb1sJLgEe6uQoJcvkG_wg" name="Random"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_eEm00JLgEe6uQoJcvkG_wg" name="Scanner"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_eE2scJLgEe6uQoJcvkG_wg" name="HashSet"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_eE6W0JLgEe6uQoJcvkG_wg" name="Map"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_eFEu4JLgEe6uQoJcvkG_wg" name="ArrayList"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_eAXOAJLgEe6uQoJcvkG_wg" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_eElmsJLgEe6uQoJcvkG_wg" name="FileNotFoundException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_eEuJkJLgEe6uQoJcvkG_wg" name="File"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eBFmwJLgEe6uQoJcvkG_wg" name="Game">
+      <ownedAttribute xmi:id="_eFJAUJLgEe6uQoJcvkG_wg" name="rOneEasy" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFJnYJLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFKOcZLgEe6uQoJcvkG_wg" value="{100, 500, 1000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFK1gZLgEe6uQoJcvkG_wg" name="rTwoEasy" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFLckJLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFLckpLgEe6uQoJcvkG_wg" value="{8000, 16000, 32000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFMqsJLgEe6uQoJcvkG_wg" name="rThreeEasy" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFMqsZLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFNRwZLgEe6uQoJcvkG_wg" value="{125000, 500000, 1000000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFPG8ZLgEe6uQoJcvkG_wg" name="rOneHard" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFPG8pLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFPuAZLgEe6uQoJcvkG_wg" value="{100, 200, 300, 500, 1000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFQVEJLgEe6uQoJcvkG_wg" name="rTwoHard" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFQVEZLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFQ8IJLgEe6uQoJcvkG_wg" value="{2000, 4000, 8000, 16000, 32000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFSKQZLgEe6uQoJcvkG_wg" name="rThreeHard" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFSKQpLgEe6uQoJcvkG_wg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFSxUZLgEe6uQoJcvkG_wg" value="{64000, 125000, 250000, 500000, 1000000}"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFTYYZLgEe6uQoJcvkG_wg" name="rounds" visibility="private" isLeaf="true" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFT_cZLgEe6uQoJcvkG_wg" name="answerOptions" visibility="private" isLeaf="true" type="_eE2scJLgEe6uQoJcvkG_wg" isReadOnly="true" association="_eF-t0JLgEe6uQoJcvkG_wg">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFV0oZLgEe6uQoJcvkG_wg" value="new HashSet&lt;>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFWbsZLgEe6uQoJcvkG_wg" name="lifelineOptions" visibility="private" isLeaf="true" type="_eE2scJLgEe6uQoJcvkG_wg" isReadOnly="true" association="_eF_78ZLgEe6uQoJcvkG_wg">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFXp0ZLgEe6uQoJcvkG_wg" value="new HashSet&lt;>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFY38JLgEe6uQoJcvkG_wg" name="winningList" visibility="private" isLeaf="true" type="_eE6W0JLgEe6uQoJcvkG_wg" isReadOnly="true" association="_eGAjAZLgEe6uQoJcvkG_wg">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eFaGEZLgEe6uQoJcvkG_wg" value="new HashMap&lt;>()"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFsZ8JLgEe6uQoJcvkG_wg" name="Game" specification="_eBRM8JLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFsZ8ZLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFsZ8pLgEe6uQoJcvkG_wg" type="_eBFmwJLgEe6uQoJcvkG_wg" direction="return"/>
+        <language>java</language>
+        <body>initializeWinningList();&#xD;
+     initializeAnswerOptions();&#xD;
+     initializeLifelineOptions();&#xD;
+     this.rounds = (diff.equals(&quot;E&quot;)) ? 3 : 5;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFwrYJLgEe6uQoJcvkG_wg" name="initializeWinningList" specification="_eBTpMJLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>winningList.put(&quot;1E&quot;, rOneEasy);&#xD;
+     winningList.put(&quot;2E&quot;, rTwoEasy);&#xD;
+     winningList.put(&quot;3E&quot;, rThreeEasy);&#xD;
+     winningList.put(&quot;1H&quot;, rOneHard);&#xD;
+     winningList.put(&quot;2H&quot;, rTwoHard);&#xD;
+     winningList.put(&quot;3H&quot;, rThreeHard);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFwrYZLgEe6uQoJcvkG_wg" name="initializeAnswerOptions" specification="_eBTpMZLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>answerOptions.add(&quot;A&quot;);&#xD;
+     answerOptions.add(&quot;B&quot;);&#xD;
+     answerOptions.add(&quot;C&quot;);&#xD;
+     answerOptions.add(&quot;D&quot;);&#xD;
+     answerOptions.add(&quot;Lifeline&quot;);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFxScJLgEe6uQoJcvkG_wg" name="initializeLifelineOptions" specification="_eBUQQJLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>lifelineOptions.add(&quot;Fifty&quot;);&#xD;
+     lifelineOptions.add(&quot;Audience&quot;);&#xD;
+     lifelineOptions.add(&quot;Phone&quot;);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFxScZLgEe6uQoJcvkG_wg" name="winningList" specification="_eBU3UJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFxScpLgEe6uQoJcvkG_wg" name="roundNo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFxSc5LgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFxSdJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFxSdZLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String concatRound = String.valueOf(roundNo).concat(diff);&#xD;
+     return winningList.get(concatRound);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFx5gJLgEe6uQoJcvkG_wg" name="pairCorrectIndex" specification="_eBX6oJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFx5gZLgEe6uQoJcvkG_wg" name="qInput">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFx5gpLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return switch (qInput) {&#xD;
+         case &quot;B&quot; -> 1;&#xD;
+         case &quot;C&quot; -> 2;&#xD;
+         case &quot;D&quot; -> 3;&#xD;
+         default -> 0;&#xD;
+     };&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFx5g5LgEe6uQoJcvkG_wg" name="pairCorrectLifeline" specification="_eBZIwJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFx5hJLgEe6uQoJcvkG_wg" name="qInput">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFx5hZLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return switch (qInput) {&#xD;
+         case &quot;Ask audience&quot; -> &quot;Ask the Audience&quot;;&#xD;
+         case &quot;Phone friend&quot; -> &quot;Phone a Friend&quot;;&#xD;
+         default -> &quot;50/50&quot;;&#xD;
+     };&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFygkJLgEe6uQoJcvkG_wg" name="roundStart" specification="_eE8zEJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFygkZLgEe6uQoJcvkG_wg" name="roundNo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFygkpLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFygk5LgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFyglJLgEe6uQoJcvkG_wg" name="player" type="_eB44AJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFyglZLgEe6uQoJcvkG_wg" name="questions" type="_eB--oJLgEe6uQoJcvkG_wg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFyglpLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFygl5LgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>// int array for how many user has won after each question&#xD;
+     int[] winnings = winningList(roundNo, diff);&#xD;
+&#xD;
+     // all variables&#xD;
+     boolean haveLifeline = true;&#xD;
+     boolean usedLifeline;&#xD;
+&#xD;
+     String qInput;  // user input&#xD;
+     int qInputIndex;&#xD;
+     String userConfirm;&#xD;
+&#xD;
+     // loop through set amount of questions; depending on difficulty.&#xD;
+     for(int currentRound = 0; currentRound &lt; rounds; currentRound++) {&#xD;
+&#xD;
+         // String variable to obtain userInput&#xD;
+         usedLifeline = false;&#xD;
+&#xD;
+         // if user is playing on hard, no lifeline in round 1&#xD;
+         if (diff.equals(&quot;H&quot;) &amp;&amp; roundNo == 1) {&#xD;
+             haveLifeline = false;&#xD;
+         }&#xD;
+&#xD;
+         // print question&#xD;
+         questions[currentRound].printQuestion();&#xD;
+&#xD;
+         while(true) {&#xD;
+             // prompt answer&#xD;
+             System.out.println(&quot;Please pick the correct answer using the corresponding letter, or use a lifeline if it's available.&quot;);&#xD;
+             qInput = userInput.nextLine();&#xD;
+&#xD;
+             // check for appropriate input&#xD;
+             if (!answerOptions.contains(qInput)) {  // invalid input (not answer/lifeline)&#xD;
+                 System.out.println(&quot;Invalid option, try again.&quot;);&#xD;
+             } else if (qInput.equals(&quot;Lifeline&quot;)) { // use lifeline&#xD;
+                 // check if user can use lifeline; both Hard difficulty round 1 and used this round conditionals&#xD;
+                 if (!haveLifeline || usedLifeline) {&#xD;
+                     System.out.println(&quot;Lifelines are not available this round, or you have used one already.&quot;);&#xD;
+                 } else { // user can pick lifeline&#xD;
+                     System.out.println(&quot;Pick a lifeline from the list below!&quot;);&#xD;
+                     System.out.println(&quot;- 50/50 (Enter: Fifty)\n- Ask audience (Enter: Audience)\n- Phone friend (Enter: Phone)&quot;);&#xD;
+                     // user input lifeline&#xD;
+                     qInput = userInput.nextLine();&#xD;
+                     // check valid input&#xD;
+                     if (lifelineOptions.contains(qInput)) {&#xD;
+                         String llTypeString = pairCorrectLifeline(qInput); // pair userinput to lifeline type string&#xD;
+                         boolean validLifeline = player.useLifeline(llTypeString, questions[currentRound]);&#xD;
+                         if (!validLifeline)  {&#xD;
+                             System.out.println(&quot;You either have used a lifeline this round, or the lifeline has already been used before.&quot;);&#xD;
+                         } else {&#xD;
+                             // set flag to true so user can't use lifelines twice on the same question.&#xD;
+                             usedLifeline = true;&#xD;
+                         }&#xD;
+                     } else {&#xD;
+                         System.out.println(&quot;Invalid option, try again.&quot;);&#xD;
+                     }&#xD;
+                 }&#xD;
+&#xD;
+             } else { // when user entered answer&#xD;
+                 // ask for answer confirmation&#xD;
+                 System.out.println(&quot;Are you sure about your answer? (Yes/No)&quot;);&#xD;
+                 userConfirm = userInput.nextLine();&#xD;
+                 // return when Y (yes)&#xD;
+                 if (userConfirm.equals(&quot;Yes&quot;)) {&#xD;
+                     break;&#xD;
+                 } else if (userConfirm.equals(&quot;No&quot;)) {&#xD;
+                     System.out.println(&quot;No worries, try again.&quot;);&#xD;
+                 } else {&#xD;
+                     System.out.println(&quot;Invalid option.&quot;);&#xD;
+                 }&#xD;
+&#xD;
+&#xD;
+             }&#xD;
+         }&#xD;
+&#xD;
+         // pair the alphabetical index to array index&#xD;
+         qInputIndex = pairCorrectIndex(qInput);&#xD;
+&#xD;
+         // determines if the answer is correct or not; if not, break loop&#xD;
+         // otherwise, display current winnings, end of loop&#xD;
+         if (qInputIndex != questions[currentRound].getCorrectIndex()) {&#xD;
+             System.out.println(&quot;This is the wrong answer.&quot;);&#xD;
+             break;&#xD;
+         } else {&#xD;
+             System.out.println(&quot;You have answered the question correctly! Your current winnings is $&quot; + winnings[currentRound] + &quot;.&quot;);&#xD;
+             usedLifeline = false;&#xD;
+         }&#xD;
+&#xD;
+         // return true if player has finished all rounds with correct answers&#xD;
+         if (currentRound == (rounds-1)) {&#xD;
+             return true;&#xD;
+         }&#xD;
+     }&#xD;
+&#xD;
+     // return false if player has lost a single round&#xD;
+     return false;&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFygmJLgEe6uQoJcvkG_wg" name="gameStart" specification="_eE-oQJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFygmZLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eFygmpLgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFygm5LgEe6uQoJcvkG_wg" name="player" type="_eB44AJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFygnJLgEe6uQoJcvkG_wg" name="qReader" type="_eCIvoJLgEe6uQoJcvkG_wg"/>
+        <language>java</language>
+        <body>int roundNo = 1;&#xD;
+     String cont;&#xD;
+&#xD;
+     // round 1&#xD;
+     // generate questions&#xD;
+     Question[] roundOneQuestions = qReader.getQuestions(rounds);&#xD;
+     // start round&#xD;
+     boolean result_1 = roundStart(roundNo,diff,userInput, player, roundOneQuestions);&#xD;
+     if(!result_1) {&#xD;
+         System.out.println(&quot;\nYou have lost the game, and your winnings are $0. Thank you for playing!&quot;);&#xD;
+         return;&#xD;
+     } else {&#xD;
+         System.out.println(&quot;\nCongratulations on finishing round 1!&quot;);&#xD;
+         System.out.println(player.getName() + &quot;has earned $1000 so far. Would you like to continue playing or walk away with your current winnings?&quot;);&#xD;
+         System.out.println(&quot;Enter Yes to keep playing, or No to finish the game.&quot;);&#xD;
+         cont = userInput.nextLine();&#xD;
+         if (cont.equals(&quot;No&quot;)) {&#xD;
+             System.out.println(&quot;Thank you for playing! You have won $1,000.&quot;);&#xD;
+             return;&#xD;
+         } else {&#xD;
+             roundNo++;&#xD;
+             System.out.println(&quot;We will now move onto round 2.\n&quot;);&#xD;
+         }&#xD;
+     }&#xD;
+&#xD;
+     // round 2&#xD;
+     // generate questions&#xD;
+     Question[] roundTwoQuestions = qReader.getQuestions(rounds);&#xD;
+     // start round&#xD;
+     boolean result_2 = roundStart(roundNo,diff,userInput, player, roundTwoQuestions);&#xD;
+     if(!result_2) {&#xD;
+         System.out.println(&quot;\nYou have lost the game, and your winnings are $0. Thank you for playing!&quot;);&#xD;
+         return;&#xD;
+     } else {&#xD;
+         System.out.println(&quot;\nCongratulations on finishing round 2!&quot;);&#xD;
+         System.out.println(player.getName() + &quot;has earned $32000 so far. Would you like to continue playing or walk away with your current winnings?&quot;);&#xD;
+         System.out.println(&quot;Enter Yes to keep playing, or No to finish the game.&quot;);&#xD;
+         cont = userInput.nextLine();&#xD;
+         if (cont.equals(&quot;No&quot;)) {&#xD;
+             System.out.println(&quot;Thank you for playing! You have won $32,000.&quot;);&#xD;
+             return;&#xD;
+         } else {&#xD;
+             roundNo++;&#xD;
+             System.out.println(&quot;We will now move onto round 3.\n&quot;);&#xD;
+         }&#xD;
+     }&#xD;
+&#xD;
+     // round 3&#xD;
+     // generate questions&#xD;
+     Question[] roundThreeQuestions = qReader.getQuestions(rounds);&#xD;
+     // start round&#xD;
+     boolean result_3 = roundStart(roundNo,diff,userInput, player, roundThreeQuestions);&#xD;
+     if(!result_3) {&#xD;
+         System.out.println(&quot;\nYou have lost the game, and your winnings are $0. Thank you for playing!&quot;);&#xD;
+     } else {&#xD;
+         System.out.println(&quot;\nCongratulations on finishing round 3, and the entire game!&quot;);&#xD;
+         System.out.println(player.getName() + &quot;has won the grand prize of $1,000,000! Thank you for playing!&quot;);&#xD;
+     }&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eBRM8JLgEe6uQoJcvkG_wg" name="Game" method="_eFsZ8JLgEe6uQoJcvkG_wg">
+        <eAnnotations xmi:id="_eBTCIJLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eBTCIZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eBRM8ZLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eBTCIpLgEe6uQoJcvkG_wg" type="_eBFmwJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eBTpMJLgEe6uQoJcvkG_wg" name="initializeWinningList" visibility="private" method="_eFwrYJLgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eBTpMZLgEe6uQoJcvkG_wg" name="initializeAnswerOptions" visibility="private" method="_eFwrYZLgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eBUQQJLgEe6uQoJcvkG_wg" name="initializeLifelineOptions" visibility="private" method="_eFxScJLgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eBU3UJLgEe6uQoJcvkG_wg" name="winningList" visibility="private" method="_eFxScZLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eBU3UZLgEe6uQoJcvkG_wg" name="roundNo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eBU3UpLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eBVeYJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eBVeYZLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eBX6oJLgEe6uQoJcvkG_wg" name="pairCorrectIndex" visibility="private" method="_eFx5gJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eBX6oZLgEe6uQoJcvkG_wg" name="qInput">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eBX6opLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eBZIwJLgEe6uQoJcvkG_wg" name="pairCorrectLifeline" visibility="private" method="_eFx5g5LgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eBZv0JLgEe6uQoJcvkG_wg" name="qInput">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eBZv0ZLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE8zEJLgEe6uQoJcvkG_wg" name="roundStart" visibility="private" method="_eFygkJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eE8zEZLgEe6uQoJcvkG_wg" name="roundNo">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eE8zEpLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eE8zE5LgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eE8zFJLgEe6uQoJcvkG_wg" name="player" type="_eB44AJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eE9aIJLgEe6uQoJcvkG_wg" name="questions" type="_eB--oJLgEe6uQoJcvkG_wg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE9aIpLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eE9aIZLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE-oQJLgEe6uQoJcvkG_wg" name="gameStart" method="_eFygmJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eE-oQZLgEe6uQoJcvkG_wg" name="diff">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eE-oQpLgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eE-oQ5LgEe6uQoJcvkG_wg" name="player" type="_eB44AJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eE-oRJLgEe6uQoJcvkG_wg" name="qReader" type="_eCIvoJLgEe6uQoJcvkG_wg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eBlWAJLgEe6uQoJcvkG_wg" name="Lifeline">
+      <ownedAttribute xmi:id="_eFbUMJLgEe6uQoJcvkG_wg" name="type" type="_eBnLMJLgEe6uQoJcvkG_wg" isReadOnly="true"/>
+      <ownedAttribute xmi:id="_eFdJYJLgEe6uQoJcvkG_wg" name="used" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFzusJLgEe6uQoJcvkG_wg" name="Lifeline" specification="_eEfgEJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFzusZLgEe6uQoJcvkG_wg" name="type" type="_eBnLMJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFzuspLgEe6uQoJcvkG_wg" type="_eBlWAJLgEe6uQoJcvkG_wg" direction="return"/>
+        <language>java</language>
+        <body>this.type = type;&#xD;
+ 	used = false;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFzus5LgEe6uQoJcvkG_wg" name="markUsed" specification="_eBsDsJLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>used = true;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eFzutJLgEe6uQoJcvkG_wg" name="applyLifeline" specification="_eEhVQJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFzutZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <language>java</language>
+        <body>if (type.equals(LifelineType.FIFTY_FIFTY)) {&#xD;
+     	apply50_50Lifeline(question);&#xD;
+     } else if (type.equals(LifelineType.ASK_AUDIENCE)) {&#xD;
+         applyAskTheAudienceLifeline(question);&#xD;
+     } else if (type.equals(LifelineType.PHONE)) {&#xD;
+         applyPhoneAFriendLifeline(question);&#xD;
+     }&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF0VwJLgEe6uQoJcvkG_wg" name="apply50_50Lifeline" specification="_eEh8UJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF0VwZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <language>java</language>
+        <body>// Randomly eliminate two incorrect answer choices&#xD;
+     Random random = new Random();&#xD;
+     int correctIndex = question.getCorrectIndex();&#xD;
+&#xD;
+     // Generate random indices until finding two distinct incorrect choices&#xD;
+     int eliminated1, eliminated2;&#xD;
+     do {&#xD;
+         eliminated1 = random.nextInt(question.getChoices().length);&#xD;
+     } while (eliminated1 == correctIndex);&#xD;
+&#xD;
+     do {&#xD;
+         eliminated2 = random.nextInt(question.getChoices().length);&#xD;
+     } while (eliminated2 == correctIndex || eliminated2 == eliminated1);&#xD;
+&#xD;
+     question.eliminateChoices(eliminated1, eliminated2);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF0VwpLgEe6uQoJcvkG_wg" name="applyAskTheAudienceLifeline" specification="_eEijYJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF0Vw5LgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <language>java</language>
+        <body>// Simulate audience response with a random distribution&#xD;
+     Random random = new Random();&#xD;
+     int[] votes = new int[question.getChoices().length];&#xD;
+     &#xD;
+     for (int i = 0; i &lt; votes.length; i++) {&#xD;
+     	int minimumVotes = i == question.getCorrectIndex()? 60 : 0;&#xD;
+     	// correct answer has at least 60 votes;&#xD;
+         votes[i] = random.nextInt(41) + minimumVotes;&#xD;
+     }&#xD;
+     &#xD;
+     /*&#xD;
+         Random random = new Random();&#xD;
+         int[] votes = new int[question.getChoices().length];&#xD;
+         &#xD;
+         votes[correctIndex] = random.nextInt(40) + 50;  &#xD;
+         int count=0;&#xD;
+       	int sum=100-votes[correctIndex];&#xD;
+       	for (int i = 0; i &lt; votes.length; i++) {&#xD;
+       	    if (i == correctIndex) {&#xD;
+       	        continue;&#xD;
+       	    }&#xD;
+&#xD;
+       	    votes[i] = (count &lt; 2) ? random.nextInt(sum) : sum;&#xD;
+       	    sum -= votes[i];&#xD;
+&#xD;
+       	    if (count &lt; 2) {&#xD;
+       	        count++;&#xD;
+       	    }&#xD;
+       	} &#xD;
+     */&#xD;
+&#xD;
+     question.displayAudienceResponse(votes);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF0VxJLgEe6uQoJcvkG_wg" name="applyPhoneAFriendLifeline" specification="_eEjKcJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF0VxZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <language>java</language>
+        <body>// Simulate friend's response with a correct answer suggestion&#xD;
+ 	question.displayHint();&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eBsDsJLgEe6uQoJcvkG_wg" name="markUsed" method="_eFzus5LgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eEfgEJLgEe6uQoJcvkG_wg" name="Lifeline" visibility="package" method="_eFzusJLgEe6uQoJcvkG_wg">
+        <eAnnotations xmi:id="_eEgHIJLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eEgHIZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eEfgEZLgEe6uQoJcvkG_wg" name="type" type="_eBnLMJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eEgHIpLgEe6uQoJcvkG_wg" type="_eBlWAJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eEhVQJLgEe6uQoJcvkG_wg" name="applyLifeline" method="_eFzutJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eEhVQZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eEh8UJLgEe6uQoJcvkG_wg" name="apply50_50Lifeline" visibility="private" method="_eF0VwJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eEh8UZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eEijYJLgEe6uQoJcvkG_wg" name="applyAskTheAudienceLifeline" visibility="private" method="_eF0VwpLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eEijYZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eEjKcJLgEe6uQoJcvkG_wg" name="applyPhoneAFriendLifeline" visibility="private" method="_eF0VxJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eEjKcZLgEe6uQoJcvkG_wg" name="question" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+      </ownedOperation>
+      <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_eBnLMJLgEe6uQoJcvkG_wg" name="LifelineType">
+        <ownedLiteral xmi:id="_eBoZUZLgEe6uQoJcvkG_wg" name="FIFTY_FIFTY"/>
+        <ownedLiteral xmi:id="_eBpAYJLgEe6uQoJcvkG_wg" name="ASK_AUDIENCE"/>
+        <ownedLiteral xmi:id="_eBpAYZLgEe6uQoJcvkG_wg" name="PHONE"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eBw8MJLgEe6uQoJcvkG_wg" name="Main">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF080JLgEe6uQoJcvkG_wg" name="printRules" specification="_eBzYcZLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>System.out.println(&quot;\nGeneral rules are as follows:&quot;);&#xD;
+     System.out.println(&quot;There will be 3 rounds, and each round has 3 questions for Easy difficulty, and 5 for Hard.&quot;);&#xD;
+     System.out.println(&quot;At the end of the rounds, you can win $1,000, $32,000, $1,000,000 respectively.&quot;);&#xD;
+     System.out.println(&quot;You may choose to leave after any round and take the corresponding amount of winnings with you; leaving mid round is not allowed.&quot;);&#xD;
+     System.out.println(&quot;You will get three lifelines:&quot;);&#xD;
+     System.out.println(&quot;- 50/50, which eliminates 2 incorrect answers;&quot;);&#xD;
+     System.out.println(&quot;- Ask the audience, in which you’ll be given multiple audience responses and you will have to decide which one is the correct answer;&quot;);&#xD;
+     System.out.println(&quot;- Phone a friend, in which you will be given one hint related to the correct answer.&quot;);&#xD;
+     System.out.println(&quot;You will lose all your winning if there is a single incorrect answer and the game will end.\n&quot;);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF080ZLgEe6uQoJcvkG_wg" name="difficulty" specification="_eFBrkJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF080pLgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eF0805LgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String difficulty;&#xD;
+     System.out.println(&quot;What difficulty do you want to play on? Enter E for easy mode, and H for hard mode.&quot;);&#xD;
+     while(true) {&#xD;
+         difficulty = userInput.nextLine();&#xD;
+         if (difficulty.equals(&quot;E&quot;) || difficulty.equals(&quot;H&quot;)) {&#xD;
+             break;&#xD;
+         } else {&#xD;
+             System.out.println(&quot;Unable to set difficulty based on input. Please try again!&quot;);&#xD;
+         }&#xD;
+     }&#xD;
+     return difficulty;&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF1j4JLgEe6uQoJcvkG_wg" name="main" specification="_eB0mkJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF1j4ZLgEe6uQoJcvkG_wg" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF1j4pLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>// new main class object&#xD;
+     Main main = new Main();&#xD;
+&#xD;
+     String menuInput;&#xD;
+     Scanner userInput = new Scanner(System.in);&#xD;
+&#xD;
+     System.out.println(&quot;Welcome to WHO WANTS TO BE A MILLIONAIRE!&quot;);&#xD;
+&#xD;
+     while (true) {&#xD;
+         System.out.println(&quot;Select an option!&quot;);&#xD;
+         System.out.println(&quot;- Press S to start the game!&quot;);&#xD;
+         System.out.println(&quot;- Press R to check the rules!&quot;);&#xD;
+         System.out.println(&quot;- Press Q to exit the game.&quot;);&#xD;
+         menuInput = userInput.nextLine();&#xD;
+&#xD;
+         // quits app if Q is input&#xD;
+         if (menuInput.equals(&quot;Q&quot;)) {            // displays thank you msg and exits&#xD;
+             System.out.println(&quot;Thank you for playing!&quot;);&#xD;
+             break;&#xD;
+         } else if (menuInput.equals(&quot;R&quot;)) {     // enter code for outputting the rules of the game&#xD;
+             main.printRules();&#xD;
+         } else if (menuInput.equals(&quot;S&quot;)) {     // start the game here&#xD;
+&#xD;
+             Lifeline FIFTY_FIFTY = new Lifeline(Lifeline.LifelineType.FIFTY_FIFTY);&#xD;
+             Lifeline ASK_AUDIENCE = new Lifeline(Lifeline.LifelineType.ASK_AUDIENCE);&#xD;
+             Lifeline PHONE = new Lifeline(Lifeline.LifelineType.PHONE);&#xD;
+&#xD;
+             Lifeline[] lifelines = new Lifeline[]{FIFTY_FIFTY, ASK_AUDIENCE, PHONE};&#xD;
+             // game start prompt&#xD;
+             System.out.println(&quot;Game will start now!&quot;);&#xD;
+&#xD;
+             // enter name&#xD;
+             System.out.println(&quot;Please enter your name:&quot;);&#xD;
+             String username = userInput.nextLine();&#xD;
+&#xD;
+             // enter difficulty&#xD;
+             System.out.println(&quot;Please enter E if you wish to play on Easy mode, or H for Hard mode.&quot;);&#xD;
+             String diff = main.difficulty(userInput);&#xD;
+&#xD;
+             // Initialize player, game, question list&#xD;
+             Player player = new Player(username, lifelines);&#xD;
+             Game game = new Game(diff);&#xD;
+             QuestionReader qReader = new QuestionReader();&#xD;
+&#xD;
+             // start game&#xD;
+             game.gameStart(diff, userInput, player, qReader);&#xD;
+             // return to main menu after a win or loss&#xD;
+             System.out.println(&quot;You will now be returned to the main menu.\n&quot;);&#xD;
+&#xD;
+         } else { // error handling for incorrect user input&#xD;
+             System.out.println(&quot;That is not a valid option. Please try again.&quot;);&#xD;
+         }&#xD;
+&#xD;
+     }&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eByKUJLgEe6uQoJcvkG_wg" name="Main">
+        <eAnnotations xmi:id="_eByxYJLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eByxYZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eBzYcJLgEe6uQoJcvkG_wg" type="_eBw8MJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eBzYcZLgEe6uQoJcvkG_wg" name="printRules" method="_eF080JLgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eB0mkJLgEe6uQoJcvkG_wg" name="main" isStatic="true" method="_eF1j4JLgEe6uQoJcvkG_wg" raisedException="_eElmsJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eB0mkZLgEe6uQoJcvkG_wg" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eB1NoJLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eFBrkJLgEe6uQoJcvkG_wg" name="difficulty" method="_eF080ZLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eFBrkZLgEe6uQoJcvkG_wg" name="userInput" type="_eEm00JLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eFCSoJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eB44AJLgEe6uQoJcvkG_wg" name="Player">
+      <ownedAttribute xmi:id="_eFdwcJLgEe6uQoJcvkG_wg" name="playerName" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFeXgZLgEe6uQoJcvkG_wg" name="lifelines" type="_eBlWAJLgEe6uQoJcvkG_wg" isReadOnly="true" association="_eGBxIZLgEe6uQoJcvkG_wg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFe-kZLgEe6uQoJcvkG_wg" value="*"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF2K85LgEe6uQoJcvkG_wg" name="Player" specification="_eEp4IJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF2K9JLgEe6uQoJcvkG_wg" name="playerName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF2K9ZLgEe6uQoJcvkG_wg" name="lifelines" type="_eBlWAJLgEe6uQoJcvkG_wg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF2K9pLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF2K95LgEe6uQoJcvkG_wg" type="_eB44AJLgEe6uQoJcvkG_wg" direction="return"/>
+        <language>java</language>
+        <body>this.playerName = playerName;&#xD;
+     this.lifelines = lifelines;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF2yAJLgEe6uQoJcvkG_wg" name="useLifeline" specification="_eErtUJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF2yAZLgEe6uQoJcvkG_wg" name="type">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF2yApLgEe6uQoJcvkG_wg" name="currentQuestion" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eF2yA5LgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>for (Lifeline lifeline : lifelines) {&#xD;
+         if (lifeline.getType().equals(type) &amp;&amp; !lifeline.isUsed()) {&#xD;
+             lifeline.markUsed();&#xD;
+             lifeline.applyLifeline(currentQuestion);&#xD;
+             return true; &#xD;
+         }&#xD;
+     }&#xD;
+     return false; &#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF2yBJLgEe6uQoJcvkG_wg" name="getName" specification="_eB7UQJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF2yBZLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return playerName;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eB7UQJLgEe6uQoJcvkG_wg" name="getName" method="_eF2yBJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eB77UJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eEp4IJLgEe6uQoJcvkG_wg" name="Player" method="_eF2K85LgEe6uQoJcvkG_wg">
+        <eAnnotations xmi:id="_eEqfMJLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eEqfMZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eEp4IZLgEe6uQoJcvkG_wg" name="playerName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eEp4IpLgEe6uQoJcvkG_wg" name="lifelines" type="_eBlWAJLgEe6uQoJcvkG_wg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eErGQJLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eEqfMpLgEe6uQoJcvkG_wg" type="_eB44AJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eErtUJLgEe6uQoJcvkG_wg" name="useLifeline" method="_eF2yAJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eErtUZLgEe6uQoJcvkG_wg" name="type">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eErtUpLgEe6uQoJcvkG_wg" name="currentQuestion" type="_eB--oJLgEe6uQoJcvkG_wg"/>
+        <ownedParameter xmi:id="_eEsUYJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eB--oJLgEe6uQoJcvkG_wg" name="Question">
+      <ownedAttribute xmi:id="_eFgzwJLgEe6uQoJcvkG_wg" name="questionText" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFgzwZLgEe6uQoJcvkG_wg" name="choices" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFha0JLgEe6uQoJcvkG_wg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFio8JLgEe6uQoJcvkG_wg" name="correctIndex" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFio8ZLgEe6uQoJcvkG_wg" name="hint" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF3ZE5LgEe6uQoJcvkG_wg" name="Question" specification="_eCBa4JLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF3ZFJLgEe6uQoJcvkG_wg" name="question">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF3ZFZLgEe6uQoJcvkG_wg" name="choices">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF3ZFpLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF3ZF5LgEe6uQoJcvkG_wg" name="correctIndex">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF3ZGJLgEe6uQoJcvkG_wg" name="hint">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF3ZGZLgEe6uQoJcvkG_wg" type="_eB--oJLgEe6uQoJcvkG_wg" direction="return"/>
+        <language>java</language>
+        <body>this.questionText = question;&#xD;
+		this.choices = choices.clone();&#xD;
+		this.correctIndex = correctIndex;&#xD;
+		this.hint = hint;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF4AIJLgEe6uQoJcvkG_wg" name="getCorrectAnswer" specification="_eCCpAZLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF4AIZLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return choices[correctIndex];&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF4AIpLgEe6uQoJcvkG_wg" name="eliminateChoices" specification="_eCD3IJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF4AI5LgEe6uQoJcvkG_wg" name="indices">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF4AJJLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>for (int index : indices) {&#xD;
+         choices[index] = &quot;[Eliminated]&quot;;&#xD;
+     }&#xD;
+     printQuestion();&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF4AJZLgEe6uQoJcvkG_wg" name="displayAudienceResponse" specification="_eCFsUJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF4AJpLgEe6uQoJcvkG_wg" name="votes">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF4AJ5LgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>// Display audience response with the given distribution of votes&#xD;
+     &#xD;
+     System.out.println(&quot;Audience Response:&quot;);&#xD;
+     for (int i = 0; i &lt; choices.length; i++) {&#xD;
+         System.out.println(choices[i] + &quot;: &quot; + votes[i]);&#xD;
+     }&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF4nMJLgEe6uQoJcvkG_wg" name="displayHint" specification="_eCG6cJLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>// Display audience response with the given distribution of votes&#xD;
+     &#xD;
+     System.out.println(&quot;Your Friend: &quot; + hint);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF4nMZLgEe6uQoJcvkG_wg" name="printQuestion" specification="_eCG6cZLgEe6uQoJcvkG_wg">
+        <language>java</language>
+        <body>System.out.println(&quot;Q: &quot; + getQuestionText());&#xD;
+ 	for (int i = 0; i &lt; choices.length; i++) {&#xD;
+ 		System.out.println(choices[i]);&#xD;
+ 	}&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eCBa4JLgEe6uQoJcvkG_wg" name="Question" visibility="package" method="_eF3ZE5LgEe6uQoJcvkG_wg">
+        <eAnnotations xmi:id="_eCCB8JLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eCCB8ZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eCBa4ZLgEe6uQoJcvkG_wg" name="question">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eCBa4pLgEe6uQoJcvkG_wg" name="choices">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eCCpAJLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eCBa45LgEe6uQoJcvkG_wg" name="correctIndex">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eCBa5JLgEe6uQoJcvkG_wg" name="hint">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eCCB8pLgEe6uQoJcvkG_wg" type="_eB--oJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eCCpAZLgEe6uQoJcvkG_wg" name="getCorrectAnswer" method="_eF4AIJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eCDQEJLgEe6uQoJcvkG_wg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eCD3IJLgEe6uQoJcvkG_wg" name="eliminateChoices" method="_eF4AIpLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eCD3IZLgEe6uQoJcvkG_wg" name="indices">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eCFFQJLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eCFsUJLgEe6uQoJcvkG_wg" name="displayAudienceResponse" method="_eF4AJZLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eCGTYJLgEe6uQoJcvkG_wg" name="votes">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eCGTYZLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eCG6cJLgEe6uQoJcvkG_wg" name="displayHint" method="_eF4nMJLgEe6uQoJcvkG_wg"/>
+      <ownedOperation xmi:id="_eCG6cZLgEe6uQoJcvkG_wg" name="printQuestion" method="_eF4nMZLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eCIvoJLgEe6uQoJcvkG_wg" name="QuestionReader">
+      <ownedAttribute xmi:id="_eFjQAJLgEe6uQoJcvkG_wg" name="questions" visibility="package" type="_eFEu4JLgEe6uQoJcvkG_wg" association="_eGC_QZLgEe6uQoJcvkG_wg"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF5OQJLgEe6uQoJcvkG_wg" name="QuestionReader" specification="_eCJ9wJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF5OQZLgEe6uQoJcvkG_wg" type="_eCIvoJLgEe6uQoJcvkG_wg" direction="return"/>
+        <language>java</language>
+        <body>this.questions = new ArrayList&lt;Question>();&#xD;
+		try {&#xD;
+			File file = new File(&quot;src/questions.txt&quot;);&#xD;
+			&#xD;
+			Scanner input = new Scanner(file);&#xD;
+			&#xD;
+			String[] answers = new String[4];&#xD;
+			while (input.hasNext()) {&#xD;
+				&#xD;
+				&#xD;
+             String questionText = input.nextLine();&#xD;
+             String hint = input.nextLine();&#xD;
+             answers[0] = input.nextLine();&#xD;
+             answers[1] = input.nextLine();&#xD;
+             answers[2] = input.nextLine();&#xD;
+             answers[3] = input.nextLine();&#xD;
+             String answer = input.nextLine();&#xD;
+             // Get correct answer ABCD&#xD;
+      //       System.out.println(answer);&#xD;
+             char correctAnswer = answer.substring(8, 9).charAt(0);&#xD;
+             int correctIndex = (int) correctAnswer - (int)'A';&#xD;
+             questions.add(new Question(questionText, answers, correctIndex, hint));&#xD;
+             &#xD;
+             if(input.hasNext()) {&#xD;
+             	input.nextLine();&#xD;
+                 input.nextLine();&#xD;
+             }&#xD;
+             	&#xD;
+         }&#xD;
+			&#xD;
+			input.close();&#xD;
+		} catch (Exception e) {&#xD;
+			throw e;&#xD;
+		}&#xD;
+		&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eF5OQpLgEe6uQoJcvkG_wg" name="getQuestions" specification="_eCMaAJLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eF5OQ5LgEe6uQoJcvkG_wg" name="NumberOfQuestions">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eF5ORJLgEe6uQoJcvkG_wg" type="_eB--oJLgEe6uQoJcvkG_wg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF5ORZLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>Random rand = new Random();&#xD;
+		&#xD;
+		Question[] questions = new Question[NumberOfQuestions];&#xD;
+		&#xD;
+		for (int i = 0; i &lt; NumberOfQuestions; i++) {&#xD;
+			int index = rand.nextInt(this.questions.size());&#xD;
+			&#xD;
+			questions[i] = this.questions.get(index);&#xD;
+			&#xD;
+			this.questions.remove(index);&#xD;
+		}&#xD;
+		&#xD;
+		return questions;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_eCJ9wJLgEe6uQoJcvkG_wg" name="QuestionReader" visibility="package" method="_eF5OQJLgEe6uQoJcvkG_wg" raisedException="_eElmsJLgEe6uQoJcvkG_wg">
+        <eAnnotations xmi:id="_eCKk0JLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_eCKk0ZLgEe6uQoJcvkG_wg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_eCLL4JLgEe6uQoJcvkG_wg" type="_eCIvoJLgEe6uQoJcvkG_wg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eCMaAJLgEe6uQoJcvkG_wg" name="getQuestions" method="_eF5OQpLgEe6uQoJcvkG_wg">
+        <ownedParameter xmi:id="_eCMaAZLgEe6uQoJcvkG_wg" name="NumberOfQuestions">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_eCNBEJLgEe6uQoJcvkG_wg" type="_eB--oJLgEe6uQoJcvkG_wg" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eCNBEZLgEe6uQoJcvkG_wg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eF-t0JLgEe6uQoJcvkG_wg" name="" memberEnd="_eF-t0ZLgEe6uQoJcvkG_wg _eFT_cZLgEe6uQoJcvkG_wg">
+      <ownedEnd xmi:id="_eF-t0ZLgEe6uQoJcvkG_wg" name="" type="_eBFmwJLgEe6uQoJcvkG_wg" association="_eF-t0JLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eF_78ZLgEe6uQoJcvkG_wg" name="" memberEnd="_eF_78pLgEe6uQoJcvkG_wg _eFWbsZLgEe6uQoJcvkG_wg">
+      <ownedEnd xmi:id="_eF_78pLgEe6uQoJcvkG_wg" name="" type="_eBFmwJLgEe6uQoJcvkG_wg" association="_eF_78ZLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGAjAZLgEe6uQoJcvkG_wg" name="" memberEnd="_eGAjApLgEe6uQoJcvkG_wg _eFY38JLgEe6uQoJcvkG_wg">
+      <ownedEnd xmi:id="_eGAjApLgEe6uQoJcvkG_wg" name="" type="_eBFmwJLgEe6uQoJcvkG_wg" association="_eGAjAZLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGBxIZLgEe6uQoJcvkG_wg" name="" memberEnd="_eGBxIpLgEe6uQoJcvkG_wg _eFeXgZLgEe6uQoJcvkG_wg">
+      <ownedEnd xmi:id="_eGBxIpLgEe6uQoJcvkG_wg" name="" type="_eB44AJLgEe6uQoJcvkG_wg" association="_eGBxIZLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGC_QZLgEe6uQoJcvkG_wg" name="" memberEnd="_eGC_QpLgEe6uQoJcvkG_wg _eFjQAJLgEe6uQoJcvkG_wg">
+      <ownedEnd xmi:id="_eGC_QpLgEe6uQoJcvkG_wg" name="" type="_eCIvoJLgEe6uQoJcvkG_wg" association="_eGC_QZLgEe6uQoJcvkG_wg"/>
+    </packagedElement>
+    <profileApplication xmi:id="_dvTTMJLgEe6uQoJcvkG_wg">
+      <eAnnotations xmi:id="_dvW9kJLgEe6uQoJcvkG_wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_dvdrQJLgEe6uQoJcvkG_wg" base_Package="_cDqQwJLgEe6uQoJcvkG_wg">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Array xmi:id="_eBWFcJLgEe6uQoJcvkG_wg" base_Element="_eBU3UJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eBoZUJLgEe6uQoJcvkG_wg" base_Element="_eBnLMJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eByxYpLgEe6uQoJcvkG_wg" base_Element="_eByKUJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eCEeMJLgEe6uQoJcvkG_wg" base_Element="_eCD3IJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eCFFQZLgEe6uQoJcvkG_wg" base_Element="_eCD3IZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eCNBEpLgEe6uQoJcvkG_wg" base_Element="_eCMaAJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eEeR8JLgEe6uQoJcvkG_wg" base_Element="_eEb1sJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eEmNwJLgEe6uQoJcvkG_wg" base_Element="_eElmsJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eEnb4JLgEe6uQoJcvkG_wg" base_Element="_eEm00JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eEvXsJLgEe6uQoJcvkG_wg" base_Element="_eEuJkJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eE5IsJLgEe6uQoJcvkG_wg" base_Element="_eE2scJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eE8MAJLgEe6uQoJcvkG_wg" base_Element="_eE6W0JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eFF9AJLgEe6uQoJcvkG_wg" base_Element="_eFEu4JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFKOcJLgEe6uQoJcvkG_wg" base_Element="_eFJAUJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFK1gJLgEe6uQoJcvkG_wg" base_Element="_eFJAUJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFLckZLgEe6uQoJcvkG_wg" base_Element="_eFK1gZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFMDoJLgEe6uQoJcvkG_wg" base_Element="_eFK1gZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFNRwJLgEe6uQoJcvkG_wg" base_Element="_eFMqsJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFPG8JLgEe6uQoJcvkG_wg" base_Element="_eFMqsJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFPuAJLgEe6uQoJcvkG_wg" base_Element="_eFPG8ZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFPuApLgEe6uQoJcvkG_wg" base_Element="_eFPG8ZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFQVEpLgEe6uQoJcvkG_wg" base_Element="_eFQVEJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFSKQJLgEe6uQoJcvkG_wg" base_Element="_eFQVEJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFSxUJLgEe6uQoJcvkG_wg" base_Element="_eFSKQZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFTYYJLgEe6uQoJcvkG_wg" base_Element="_eFSKQZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFT_cJLgEe6uQoJcvkG_wg" base_Element="_eFTYYZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Generics xmi:id="_eFV0oJLgEe6uQoJcvkG_wg" genericsValue="String" base_Element="_eFT_cZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFWbsJLgEe6uQoJcvkG_wg" base_Element="_eFT_cZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Generics xmi:id="_eFXp0JLgEe6uQoJcvkG_wg" genericsValue="String" base_Element="_eFWbsZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFYQ4JLgEe6uQoJcvkG_wg" base_Element="_eFWbsZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Generics xmi:id="_eFaGEJLgEe6uQoJcvkG_wg" genericsValue="String, int[]" base_Element="_eFY38JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFatIJLgEe6uQoJcvkG_wg" base_Element="_eFY38JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFb7QJLgEe6uQoJcvkG_wg" base_Element="_eFbUMJLgEe6uQoJcvkG_wg">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_eFciUJLgEe6uQoJcvkG_wg" name="getType" method="_eFzHoJLgEe6uQoJcvkG_wg">
+      <ownedParameter xmi:id="_eFciUZLgEe6uQoJcvkG_wg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFeXgJLgEe6uQoJcvkG_wg" base_Element="_eFdwcJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFe-kJLgEe6uQoJcvkG_wg" base_Element="_eFeXgZLgEe6uQoJcvkG_wg">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_eFfloJLgEe6uQoJcvkG_wg" name="getLifelines" method="_eF2K8JLgEe6uQoJcvkG_wg">
+      <ownedParameter xmi:id="_eFfloZLgEe6uQoJcvkG_wg" type="_eBlWAJLgEe6uQoJcvkG_wg" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFflopLgEe6uQoJcvkG_wg" value="*"/>
+      </ownedParameter>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:Array xmi:id="_eFe-kpLgEe6uQoJcvkG_wg" base_Element="_eFeXgZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFgMsJLgEe6uQoJcvkG_wg" base_Element="_eFfloJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFgzwpLgEe6uQoJcvkG_wg" base_Element="_eFgzwZLgEe6uQoJcvkG_wg">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_eFiB4JLgEe6uQoJcvkG_wg" name="getChoices" method="_eF3ZEJLgEe6uQoJcvkG_wg">
+      <ownedParameter xmi:id="_eFiB4ZLgEe6uQoJcvkG_wg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFiB4pLgEe6uQoJcvkG_wg" value="*"/>
+      </ownedParameter>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:Array xmi:id="_eFha0ZLgEe6uQoJcvkG_wg" dimensions="1" base_Element="_eFgzwZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Array xmi:id="_eFiB45LgEe6uQoJcvkG_wg" base_Element="_eFiB4JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFio8pLgEe6uQoJcvkG_wg" base_Element="_eFio8ZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Generics xmi:id="_eFj3EJLgEe6uQoJcvkG_wg" genericsValue="Question" base_Element="_eFjQAJLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_eFkeIJLgEe6uQoJcvkG_wg" base_Element="_eFjQAJLgEe6uQoJcvkG_wg"/>
+  <uml:OpaqueBehavior xmi:id="_eFzHoJLgEe6uQoJcvkG_wg" name="getType" specification="_eFciUJLgEe6uQoJcvkG_wg">
+    <ownedParameter xmi:id="_eFzHoZLgEe6uQoJcvkG_wg" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>if(type == LifelineType.FIFTY_FIFTY)&#xD;
+ 		return &quot;50/50&quot;;&#xD;
+ 	else if (type == LifelineType.ASK_AUDIENCE)&#xD;
+ 			return &quot;Ask the Audience&quot;;&#xD;
+ 	else return &quot;Phone a Friend&quot;;&#xD;
+ </body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_eF2K8JLgEe6uQoJcvkG_wg" name="getLifelines" specification="_eFfloJLgEe6uQoJcvkG_wg">
+    <ownedParameter xmi:id="_eF2K8ZLgEe6uQoJcvkG_wg" type="_eBlWAJLgEe6uQoJcvkG_wg" direction="return">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF2K8pLgEe6uQoJcvkG_wg" value="*"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>return lifelines.clone();&#xD;
+ </body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_eF3ZEJLgEe6uQoJcvkG_wg" name="getChoices" specification="_eFiB4JLgEe6uQoJcvkG_wg">
+    <ownedParameter xmi:id="_eF3ZEZLgEe6uQoJcvkG_wg" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF3ZEpLgEe6uQoJcvkG_wg" value="*"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>return choices.clone(); // Return a copy to avoid modification outside the class&#xD;
+ </body>
+  </uml:OpaqueBehavior>
+  <UMLLabProfile:Reference xmi:id="_eF_78JLgEe6uQoJcvkG_wg" base_Element="_eF-t0JLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eGAjAJLgEe6uQoJcvkG_wg" base_Element="_eF_78ZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eGBxIJLgEe6uQoJcvkG_wg" base_Element="_eGAjAZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eGC_QJLgEe6uQoJcvkG_wg" base_Element="_eGBxIZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Reference xmi:id="_eGDmUJLgEe6uQoJcvkG_wg" base_Element="_eGC_QZLgEe6uQoJcvkG_wg"/>
+  <UMLLabProfile:Patch xmi:id="_fJs0oJLgEe6uQoJcvkG_wg" base_Element="_eBlWAJLgEe6uQoJcvkG_wg" patchText="@@ -69,26 +69,24 @@&#xA; LifelineType&#xA;-()&#xA;  %7B%0D%0A%09%09FIFTY_&#xA;" conflicting="false"/>
+</xmi:XMI>
