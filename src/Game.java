@@ -64,9 +64,9 @@ public class Game {
 
     private String pairCorrectLifeline(String qInput) {
         return switch (qInput) {
-            case "Ask audience" -> "ASK_AUDIENCE";
-            case "Phone friend" -> "PHONE";
-            default -> "FIFTY_FIFTY";
+            case "Ask audience" -> "Ask the Audience";
+            case "Phone friend" -> "Phone a Friend";
+            default -> "50/50";
         };
     }
 
@@ -144,6 +144,8 @@ public class Game {
                     } else {
                         System.out.println("Invalid option.");
                     }
+
+                    usedLifeline = false;
                 }
             }
 
