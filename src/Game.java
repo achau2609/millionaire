@@ -154,9 +154,11 @@ public class Game {
             // otherwise, display current winnings, end of loop
             if (qInputIndex != questions[currentRound].getCorrectIndex()) {
                 System.out.println("This is the wrong answer.");
+                System.out.println("********************************************");
                 break;
             } else {
                 System.out.println("You have answered the question correctly! Your current winnings is $" + winnings[currentRound] + ".");
+                System.out.println("********************************************");
                 usedLifeline = false;
             }
 
@@ -186,7 +188,7 @@ public class Game {
             return;
         } else {
             System.out.println("\nCongratulations on finishing round 1!");
-            System.out.println(player.getName() + "has earned $1000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println(player.getName() + " has earned $1000 so far. Would you like to continue playing or walk away with your current winnings?");
             System.out.println("Enter Yes to keep playing, or No to finish the game.");
             cont = userInput.nextLine();
             if (cont.equals("No")) {
@@ -195,6 +197,7 @@ public class Game {
             } else {
                 roundNo++;
                 System.out.println("We will now move onto round 2.\n");
+                System.out.println("********************************************");
             }
         }
 
@@ -208,7 +211,7 @@ public class Game {
             return;
         } else {
             System.out.println("\nCongratulations on finishing round 2!");
-            System.out.println(player.getName() + "has earned $32000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println(player.getName() + " has earned $32000 so far. Would you like to continue playing or walk away with your current winnings?");
             System.out.println("Enter Yes to keep playing, or No to finish the game.");
             cont = userInput.nextLine();
             if (cont.equals("No")) {
@@ -217,6 +220,7 @@ public class Game {
             } else {
                 roundNo++;
                 System.out.println("We will now move onto round 3.\n");
+                System.out.println("********************************************");
             }
         }
 
@@ -229,7 +233,7 @@ public class Game {
             System.out.println("\nYou have lost the game, and your winnings are $0. Thank you for playing!");
         } else {
             System.out.println("\nCongratulations on finishing round 3, and the entire game!");
-            System.out.println(player.getName() + "has won the grand prize of $1,000,000! Thank you for playing!");
+            System.out.println(player.getName() + " has won the grand prize of $1,000,000! Thank you for playing!");
         }
     }
 

@@ -69,14 +69,17 @@ public class Main {
                 Lifeline[] lifelines = new Lifeline[]{FIFTY_FIFTY, ASK_AUDIENCE, PHONE};
                 // game start prompt
                 System.out.println("Game will start now!");
+                System.out.println("********************************************");
 
                 // enter name
                 System.out.println("Please enter your name:");
                 String username = userInput.nextLine();
+                System.out.println("********************************************");
 
                 // enter difficulty
                 System.out.println("Please enter E if you wish to play on Easy mode, or H for Hard mode.");
                 String diff = main.difficulty(userInput);
+                System.out.println("********************************************");
 
                 // Initialize player, game, question list
                 Player player = new Player(username, lifelines);
@@ -87,6 +90,7 @@ public class Main {
                 game.gameStart(diff, userInput, player, qReader);
                 // return to main menu after a win or loss
                 System.out.println("You will now be returned to the main menu.\n");
+                System.out.println("********************************************");
 
             } else { // error handling for incorrect user input
                 System.out.println("That is not a valid option. Please try again.");
