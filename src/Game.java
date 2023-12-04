@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game {
 
@@ -13,12 +10,14 @@ public class Game {
     private final int[] rThreeHard = {64000, 125000, 250000, 500000, 1000000};
     private final int rounds;
     private final HashSet<String> answerOptions = new HashSet<>();
-    private Map<String, int[]> winningList = new HashMap<>();
+    private final HashSet<String> lifelineOptions = new HashSet<>();
+    private final Map<String, int[]> winningList = new HashMap<>();
 
 
     public Game(String diff) {
         initializeWinningList();
         initializeAnswerOptions();
+        initializeLifelineOptions();
         this.rounds = (diff.equals("E")) ? 3 : 5;
     }
 
@@ -41,6 +40,12 @@ public class Game {
         answerOptions.add("Lifeline");
     }
 
+    private void initializeLifelineOptions() {
+        lifelineOptions.add("Fifty");
+        lifelineOptions.add("Audience");
+        lifelineOptions.add("Phone");
+    }
+
     // list for winning output
     private int[] winningList(int roundNo, String diff) {
         String concatRound = String.valueOf(roundNo).concat(diff);
@@ -54,6 +59,14 @@ public class Game {
             case "C" -> 2;
             case "D" -> 3;
             default -> 0;
+        };
+    }
+
+    private String pairCorrectLifeline(String qInput) {
+        return switch (qInput) {
+            case "Ask audience" -> "ASK_AUDIENCE";
+            case "Phone friend" -> "PHONE";
+            default -> "FIFTY_FIFTY";
         };
     }
 
@@ -99,10 +112,21 @@ public class Game {
                         System.out.println("Lifelines are not available this round, or you have used one already.");
                     } else { // user can pick lifeline
                         System.out.println("Pick a lifeline from the list below!");
-                        System.out.println("abcd");
-                        // check whether lifeline can be used
-
-                        // if can use, display outcome (50/50 list answers, audience list probability, phone list the hint)
+                        System.out.println("- 50/50 (Enter: Fifty)\n- Ask audience (Enter: Audience)\n- Phone friend (Enter: Phone)");
+                        // user input lifeline
+                        qInput = userInput.nextLine();
+                        // check valid input
+                        if (lifelineOptions.contains(qInput)) {
+                            String llTypeString = pairCorrectLifeline(qInput); // pair userinput to lifeline type string
+                            boolean validLifeline = player.useLifeline(llTypeString);
+                            if (validLifeline)  {
+                                player.getLifelines()[0].applyLifeline(questions[currentRound]);
+                            } else {
+                                System.out.println("You either have used a lifeline this round, or the lifeline has already been used before.");
+                            }
+                        } else {
+                            System.out.println("Invalid option, try again.");
+                        }
 
                         // set flag to true so user can't use lifelines twice on the same question.
                         usedLifeline = true;
@@ -110,12 +134,12 @@ public class Game {
 
                 } else { // when user entered answer
                     // ask for answer confirmation
-                    System.out.println("Are you sure about your answer? Enter Y to confirm or N to reselect an answer.");
+                    System.out.println("Are you sure about your answer? (Yes/No)");
                     userConfirm = userInput.nextLine();
                     // return when Y (yes)
-                    if (userConfirm.equals("Y")) {
+                    if (userConfirm.equals("Yes")) {
                         break;
-                    } else if (userConfirm.equals("N")) {
+                    } else if (userConfirm.equals("No")) {
                         System.out.println("No worries, try again.");
                     } else {
                         System.out.println("Invalid option.");
@@ -205,7 +229,7 @@ public class Game {
             return;
         } else {
             System.out.println("\nCongratulations on finishing round 1!");
-            System.out.println("Your have earned $1000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println(player.getName() + "has earned $1000 so far. Would you like to continue playing or walk away with your current winnings?");
             System.out.println("Enter Yes to keep playing, or No to finish the game.");
             cont = userInput.nextLine();
             if (cont.equals("No")) {
@@ -227,7 +251,7 @@ public class Game {
             return;
         } else {
             System.out.println("\nCongratulations on finishing round 2!");
-            System.out.println("Your have earned $32000 so far. Would you like to continue playing or walk away with your current winnings?");
+            System.out.println(player.getName() + "has earned $32000 so far. Would you like to continue playing or walk away with your current winnings?");
             System.out.println("Enter Yes to keep playing, or No to finish the game.");
             cont = userInput.nextLine();
             if (cont.equals("No")) {
@@ -245,10 +269,10 @@ public class Game {
         // start round
         boolean result_3 = roundStart(roundNo,diff,userInput, player, roundThreeQuestions);
         if(!result_3) {
-            System.out.println("You have lost the game, and your winnings are $0. Thank you for playing!");
+            System.out.println("\nYou have lost the game, and your winnings are $0. Thank you for playing!");
         } else {
             System.out.println("\nCongratulations on finishing round 3, and the entire game!");
-            System.out.println("You have won the grand prize of $1,000,000! Thank you for playing!");
+            System.out.println(player.getName() + "has won the grand prize of $1,000,000! Thank you for playing!");
         }
     }
 

@@ -62,11 +62,11 @@ public class Main {
                 main.printRules();
             } else if (menuInput.equals("S")) {     // start the game here
 
-                Lifeline fifty = new Lifeline(Lifeline.LifelineType.FIFTY_FIFTY);
-                Lifeline audience = new Lifeline(Lifeline.LifelineType.ASK_AUDIENCE);
-                Lifeline phone = new Lifeline(Lifeline.LifelineType.PHONE);
+                Lifeline FIFTY_FIFTY = new Lifeline(Lifeline.LifelineType.FIFTY_FIFTY);
+                Lifeline ASK_AUDIENCE = new Lifeline(Lifeline.LifelineType.ASK_AUDIENCE);
+                Lifeline PHONE = new Lifeline(Lifeline.LifelineType.PHONE);
 
-                Lifeline[] lifelines = new Lifeline[]{fifty, audience, phone};
+                Lifeline[] lifelines = new Lifeline[]{FIFTY_FIFTY, ASK_AUDIENCE, PHONE};
                 // game start prompt
                 System.out.println("Game will start now!");
 
