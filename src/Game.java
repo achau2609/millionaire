@@ -118,18 +118,16 @@ public class Game {
                         // check valid input
                         if (lifelineOptions.contains(qInput)) {
                             String llTypeString = pairCorrectLifeline(qInput); // pair userinput to lifeline type string
-                            boolean validLifeline = player.useLifeline(llTypeString);
-                            if (validLifeline)  {
-                                player.getLifelines()[0].applyLifeline(questions[currentRound]);
-                            } else {
+                            boolean validLifeline = player.useLifeline(llTypeString, questions[currentRound]);
+                            if (!validLifeline)  {
                                 System.out.println("You either have used a lifeline this round, or the lifeline has already been used before.");
+                            } else {
+                                // set flag to true so user can't use lifelines twice on the same question.
+                                usedLifeline = true;
                             }
                         } else {
                             System.out.println("Invalid option, try again.");
                         }
-
-                        // set flag to true so user can't use lifelines twice on the same question.
-                        usedLifeline = true;
                     }
 
                 } else { // when user entered answer
@@ -145,56 +143,12 @@ public class Game {
                         System.out.println("Invalid option.");
                     }
 
-                    usedLifeline = false;
+
                 }
             }
 
             // pair the alphabetical index to array index
             qInputIndex = pairCorrectIndex(qInput);
-
-            //System.out.println("Lifelines are not available this round.");
-            //System.out.println("You may also opt to use a lifeline! Type \'Lifelife\' for the list of available lifelines.");
-
-
-
-            // requests userInput for answer; user also has option to use lifeline; checks for correct input
-            /*while(true) {
-                System.out.println("Please pick the correct answer using the corresponding number, or use a lifeline if it's available.");
-                qInput = userInput.nextLine();
-                if (!answerOptions.contains(qInput)) {
-                    System.out.println("Invalid option, try again.");
-                } else if (!haveLifeline) {
-                    System.out.println("Lifelines are not available this round.");
-                } else {
-                    break;
-                }
-            }*/
-
-            // check if there's any remaining lifelines; if yes show options
-
-            // if lifeline is used, display corresponding effect, mark lifeline used and change answers; then ask for userInput again
-                // if 50-50, remove wrong answer index from array
-
-            // checks for incorrect input + if user tries to use lifeline again
-            /*while(true) {
-                System.out.println("Please pick the correct answer using the corresponding number.");
-                qInput = userInput.nextLine();
-                if (!answerOptions.contains(qInput)) {
-                    System.out.println("Invalid option, try again.");
-                } else if (qInput.equals("Lifeline")) {
-                    System.out.println("You have already used up your available lifeline chance for this round/there are no more available lifelines.");
-                } else {
-                    System.out.println("Are you sure about your answer? Enter Y to confirm or N to reselect an answer.");
-                    userConfirm = userInput.nextLine();
-                    if (userConfirm.equals("Y")) {
-                        break;
-                    } else if (userConfirm.equals("N")) {
-                        System.out.println("No worries, try again.");
-                    } else {
-                        System.out.println("Invalid option.");
-                    }
-                }
-            }*/
 
             // determines if the answer is correct or not; if not, break loop
             // otherwise, display current winnings, end of loop
@@ -203,6 +157,7 @@ public class Game {
                 break;
             } else {
                 System.out.println("You have answered the question correctly! Your current winnings is $" + winnings[currentRound] + ".");
+                usedLifeline = false;
             }
 
             // return true if player has finished all rounds with correct answers
