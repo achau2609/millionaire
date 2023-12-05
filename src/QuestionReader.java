@@ -9,7 +9,7 @@ public class QuestionReader {
 	QuestionReader() throws FileNotFoundException{
 		this.questions = new ArrayList<Question>();
 		try {
-			File file = new File("src/questions.txt");
+			File file = new File("questions.txt");
 			
 			Scanner input = new Scanner(file);
 			
